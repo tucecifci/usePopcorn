@@ -1,9 +1,8 @@
-import { useState } from 'react'
-import './App.css'
-import './index.css'
-import Navbar from './Navbar'
-import MainPage from './MainPage'
-
+import { useState } from "react";
+import "./App.css";
+import "./index.css";
+import Navbar from "./Navbar";
+import MainPage from "./MainPage";
 
 const tempMovieData = [
   {
@@ -54,14 +53,18 @@ const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
 function App() {
-  
-  return (
-      <div>
+  const [movies, setMovies] = useState(tempMovieData);
 
-        <Navbar />
-        <MainPage tempMovieData={tempMovieData} tempWatchedData={tempWatchedData} average={average} />
-      </div>
-  )
+  return (
+    <div>
+      <Navbar />
+      <MainPage
+        tempMovieData={tempMovieData}
+        tempWatchedData={tempWatchedData}
+        average={average}
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;

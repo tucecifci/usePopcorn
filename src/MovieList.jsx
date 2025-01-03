@@ -3,7 +3,6 @@ import { useState } from "react";
 import Movie from './Movie';
 
 function MovieList({tempMovieData}) {
-    const [movies, setMovies] = useState(tempMovieData);
 
   return (
     <ul className="list">
