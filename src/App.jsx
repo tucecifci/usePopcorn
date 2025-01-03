@@ -3,6 +3,9 @@ import "./App.css";
 import "./index.css";
 import Navbar from "./Navbar";
 import MainPage from "./MainPage";
+import Logo from "./Logo";
+import Search from "./Search";
+import NumResults from "./NumResults";
 
 const tempMovieData = [
   {
@@ -57,11 +60,16 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar>
+        <Logo />
+        <Search />
+        <NumResults movies={movies}/>
+      </Navbar>
       <MainPage
         tempMovieData={tempMovieData}
         tempWatchedData={tempWatchedData}
         average={average}
+        movies={movies}
       />
     </div>
   );
