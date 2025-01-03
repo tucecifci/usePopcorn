@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import Movie from './Movie';
 
-function MovieList({tempMovieData}) {
+function MovieList({tempMovieData, movies}) {
 
   return (
     <ul className="list">
