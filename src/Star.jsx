@@ -7,9 +7,12 @@ const starStyle = {
   display: "block",
 };
 
-function Star({ onRate, full }) {
+function Star({ onRate, full, onHoverIn, onHoverOut}) {
   return (
-    <span style={starStyle} role="button" onClick={onRate}>
+    <span style={starStyle} role="button" onClick={onRate} 
+    onMouseEnter={onHoverIn}
+    onMouseLeave={onHoverOut}
+    >
       {full ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
