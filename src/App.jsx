@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import "./index.css";
 import Navbar from "./Navbar";
@@ -55,8 +56,19 @@ const tempWatchedData = [
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
+
+
 function App() {
-  const [movies, setMovies] = useState(tempMovieData);
+  const [movies, setMovies] = useState([tempMovieData]);
+  const [watched, setWatched] = useState(tempWatchedData);
+
+  useEffect(() => {
+    fetch(`http://www.omdbapi.com/?apikey=${69587382}&s=interstellar
+    `)
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
   return (
     <div>
